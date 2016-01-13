@@ -3,14 +3,17 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.IO;
 
-public class Packager {
+public class Packager
+{
+    static string resPath = "Build/";
     static string appPath = Application.dataPath + "/";
     static List<string> buildList = new List<string>();
-    static Dictionary<string, AssetBundle> assetBundles = new Dictionary<string,AssetBundle>();
+    static Dictionary<string, AssetBundle> assetBundles = new Dictionary<string, AssetBundle>();
     static Dictionary<string, List<string>> dependencies = new Dictionary<string, List<string>>();
 
     [MenuItem("Game/Build iPhone Resource", false, 11)]
-    public static void BuildiPhoneResource() {
+    public static void BuildiPhoneResource()
+    {
         BuildTarget target;
 #if UNITY_5
         target = BuildTarget.iOS;
@@ -21,12 +24,14 @@ public class Packager {
     }
 
     [MenuItem("Game/Build Android Resource", false, 12)]
-    public static void BuildAndroidResource() {
+    public static void BuildAndroidResource()
+    {
         BuildReources(BuildTarget.Android, true);
     }
 
     [MenuItem("Game/Build Windows Resource", false, 13)]
-    public static void BuildWindowsResource() {
+    public static void BuildWindowsResource()
+    {
         BuildReources(BuildTarget.StandaloneWindows, true);
     }
 
@@ -38,7 +43,7 @@ public class Packager {
         {
             string path = AssetDatabase.GetAssetPath(obj);
             string[] dependList = AssetDatabase.GetDependencies(new string[] { path });
-            foreach(string depend in dependList)
+            foreach (string depend in dependList)
             {
                 Debug.Log(string.Format("{0} -> {1}", path, depend));
             }
@@ -52,7 +57,7 @@ public class Packager {
         dependencies.Clear();
         assetBundles.Clear();
         string streamPath = appPath + "StreamingAssets/";
-        BuildDependenciesFromPath(appPath + "Build/");
+        BuildDependenciesFromPath(appPath + resPath);
         BuildAssetBundleFromDependenices(target);
         //WriteDependencies2Lua(streamPath + "assetbundle.lua");
         WriteDependencies2Json(streamPath + "assetbundle.txt");
@@ -120,7 +125,7 @@ public class Packager {
             string assetName = Path.GetFileName(assetPath);
             string assetExtension = Path.GetExtension(assetPath);
             string assetDirectory = Path.GetDirectoryName(assetPath);
-            string bundlePath = assetDirectory.Replace("Assets/Build", "Assets/StreamingAssets");
+            string bundlePath = assetDirectory.Replace("Assets/" + resPath, "Assets/StreamingAssets/");
             CreateDirectories(bundlePath);
             bundlePath = bundlePath + "/" + assetName + ".assetbundle";
             if (assetExtension == ".prefab") { BuildPipeline.PushAssetDependencies(); }
@@ -166,7 +171,7 @@ public class Packager {
         {
             AssetBundleData data = new AssetBundleData();
             string assetPath = AssetDatabase.GUIDToAssetPath(kvp.Key);
-            data.name = assetPath.Replace("Assets/Build/", "");
+            data.name = assetPath.Replace("Assets/" + resPath, "");
             data.dependAssets = FindDependencies(kvp.Key);
             datas.Add(data);
         }
@@ -190,7 +195,7 @@ public class Packager {
         foreach (KeyValuePair<string, List<string>> kvp in dependencies)
         {
             string assetPath = AssetDatabase.GUIDToAssetPath(kvp.Key);
-            string bundlePath = assetPath.Replace("Assets/Build/", "");
+            string bundlePath = assetPath.Replace("Assets/" + resPath, "");
             sw.Write("\t[\"" + bundlePath + "\"] = {\n");
 
             int count = 1;
@@ -219,7 +224,7 @@ public class Packager {
             foreach (string guid in guids)
             {
                 string assetPath = AssetDatabase.GUIDToAssetPath(guid);
-                string bundlePath = assetPath.Replace("Assets/Build/", "");
+                string bundlePath = assetPath.Replace("Assets/" + resPath, "");
 
                 List<string> subDependList = FindDependencies(guid);
                 foreach (string subDepend in subDependList)
