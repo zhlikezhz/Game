@@ -1,0 +1,32 @@
+module("MainCity", package.seeall)
+import "UIButton"
+import "UIEventListener"
+
+function Start()
+	RegisterEvent()
+end
+
+function RegisterEvent()
+	local shopBtn = gameObject.Find("MainCity/ForegroundLayer/LeftBottom/Grid/Shop")
+	local recruitBtn = gameObject.Find("MainCity/ForegroundLayer/LeftBottom/Grid/Recruit")
+	local taskBtn = gameObject.Find("MainCity/ForegroundLayer/LeftBottom/Grid/Task")
+	local warlordsBtn = gameObject.Find("MainCity/ForegroundLayer/LeftBottom/Grid/Warlords")
+
+	UIEventListener.Get(shopBtn).onClick = function(obj)
+		print(obj.name)
+	end
+
+	UIEventListener.Get(recruitBtn).onClick = function(obj)
+		print(obj.name)
+	end
+
+	UIEventListener.Get(taskBtn).onClick = function(obj)
+		print(obj.name)
+	end
+
+	UIEventListener.Get(warlordsBtn).onClick = function(obj)
+		print(obj.name)
+	end
+end
+
+return MainCity

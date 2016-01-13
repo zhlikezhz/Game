@@ -1,0 +1,48 @@
+-- require("os")
+
+-- function test1()
+-- 	local meta = {name = "1010"}
+-- 	meta.__index = function(a, key)
+-- 		print(a.name)
+-- 		print("1")
+-- 		return print
+-- 	end
+
+-- 	meta.__newindex = function(a, key, value)
+-- 		print("2")
+-- 		print(a.name)
+-- 	end
+
+-- 	meta.__call = function(a, ...)
+-- 		print(...)
+-- 		print("3")
+-- 		print(a.name)
+-- 	end
+
+-- 	meta.__tostring = function(a)
+-- 		print("4")
+-- 		print(a.name)
+-- 		return "123"
+-- 	end
+
+-- 	meta.__gc = function(a)
+-- 		print("5")
+-- 		print(a.name)
+-- 	end
+
+-- 	local real = {name = "1000"}
+-- 	setmetatable(real, meta)
+-- 	print(real.a)
+-- 	print(real)
+-- 	real.a("123")
+-- 	real[1] = 10
+-- 	real("213")
+-- end
+
+-- function main()
+-- 	test1()
+-- end
+
+-- main()
+
+print("dfs")

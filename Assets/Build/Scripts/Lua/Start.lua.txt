@@ -1,0 +1,11 @@
+local Start = module("Start", package.seeall)
+
+
+function Awake()
+	print("start init")
+end
+
+function Start()
+end
+
+return Start
