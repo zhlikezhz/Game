@@ -22,7 +22,8 @@
         [
             "Sprites/UI/Atlas/Atlas_MainCity.png",            
             "Sprites/UI/Atlas/Atlas_MainCity.mat",            
-            "Sprites/UI/Atlas/Atlas_MainCity.prefab"
+            "Sprites/UI/Atlas/Atlas_MainCity.prefab",            
+            "Scripts/Lua/MainCityPanel.lua.txt"
         ]
     },    
     
