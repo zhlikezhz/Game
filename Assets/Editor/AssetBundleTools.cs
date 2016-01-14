@@ -3,15 +3,17 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.IO;
 
-public class Packager
+public class AssetBundleTools
 {
-    static string resPath = "Build/";
+    static string srcPath = "Build/";
+    static string desPath = "StreamingAssets/";
     static string appPath = Application.dataPath + "/";
+    static string dependFileName = "assetbundle.txt";
     static List<string> buildList = new List<string>();
     static Dictionary<string, AssetBundle> assetBundles = new Dictionary<string, AssetBundle>();
     static Dictionary<string, List<string>> dependencies = new Dictionary<string, List<string>>();
 
-    [MenuItem("Game/Build iPhone Resource", false, 11)]
+    [MenuItem("AssetBundle/Build iPhone Resource", false, 11)]
     public static void BuildiPhoneResource()
     {
         BuildTarget target;
@@ -23,44 +25,27 @@ public class Packager
         BuildReources(target, false);
     }
 
-    [MenuItem("Game/Build Android Resource", false, 12)]
+    [MenuItem("AssetBundle/Build Android Resource", false, 12)]
     public static void BuildAndroidResource()
     {
         BuildReources(BuildTarget.Android, true);
     }
 
-    [MenuItem("Game/Build Windows Resource", false, 13)]
+    [MenuItem("AssetBundle/Build Windows Resource", false, 13)]
     public static void BuildWindowsResource()
     {
         BuildReources(BuildTarget.StandaloneWindows, true);
     }
-
-    [MenuItem("Game/Print Dependencies", false, 14)]
-    public static void PrintDependencies()
-    {
-        Object[] objs = Selection.objects;
-        foreach (Object obj in objs)
-        {
-            string path = AssetDatabase.GetAssetPath(obj);
-            string[] dependList = AssetDatabase.GetDependencies(new string[] { path });
-            foreach (string depend in dependList)
-            {
-                Debug.Log(string.Format("{0} -> {1}", path, depend));
-            }
-        }
-    }
-
 
     public static void BuildReources(BuildTarget target, bool isWin)
     {
         buildList.Clear();
         dependencies.Clear();
         assetBundles.Clear();
-        string streamPath = appPath + "StreamingAssets/";
-        BuildDependenciesFromPath(appPath + resPath);
+        string streamPath = appPath + desPath;
+        BuildDependenciesFromPath(appPath + srcPath);
         BuildAssetBundleFromDependenices(target);
-        //WriteDependencies2Lua(streamPath + "assetbundle.lua");
-        WriteDependencies2Json(streamPath + "assetbundle.txt");
+        WriteDependencies2Json(streamPath + dependFileName);
         AssetDatabase.Refresh();
     }
 
@@ -84,7 +69,7 @@ public class Packager
             foreach (string file in files)
             {
                 string newPath = file.Replace("\\", "/");
-                newPath = "Assets/" + newPath.Replace(appPath, "");
+                newPath = newPath.Replace(appPath, "Assets/");
                 string guid = AssetDatabase.AssetPathToGUID(newPath);
                 string fileExtension = Path.GetExtension(newPath);
 
@@ -126,7 +111,7 @@ public class Packager
             string assetName = Path.GetFileName(assetPath);
             string assetExtension = Path.GetExtension(assetPath);
             string assetDirectory = Path.GetDirectoryName(assetPath);
-            string bundlePath = assetDirectory.Replace("Assets/" + resPath, "Assets/StreamingAssets/");
+            string bundlePath = assetDirectory.Replace("Assets/" + srcPath, "Assets/" + desPath);
             CreateDirectories(bundlePath);
             bundlePath = bundlePath + "/" + assetName + ".assetbundle";
             if (assetExtension == ".prefab") { BuildPipeline.PushAssetDependencies(); }
@@ -172,7 +157,7 @@ public class Packager
         {
             AssetBundleData data = new AssetBundleData();
             string assetPath = AssetDatabase.GUIDToAssetPath(kvp.Key);
-            data.name = assetPath.Replace("Assets/" + resPath, "");
+            data.name = assetPath.Replace("Assets/" + srcPath, "");
             data.dependAssets = FindDependencies(kvp.Key);
             datas.Add(data);
         }
@@ -181,36 +166,6 @@ public class Packager
         StreamWriter sw = new StreamWriter(fs);
         string jsonStr = JsonFormatter.PrettyPrint(LitJson.JsonMapper.ToJson(datas));
         sw.Write(jsonStr);
-        sw.Flush();
-        sw.Close();
-        fs.Close();
-    }
-
-    public static void WriteDependencies2Lua(string path)
-    {
-        path = path.Replace("/", "\\");
-        FileStream fs = new FileStream(path, FileMode.Create);
-        StreamWriter sw = new StreamWriter(fs);
-
-        sw.Write("gdABDependencies = {\n");
-        foreach (KeyValuePair<string, List<string>> kvp in dependencies)
-        {
-            string assetPath = AssetDatabase.GUIDToAssetPath(kvp.Key);
-            string bundlePath = assetPath.Replace("Assets/" + resPath, "");
-            sw.Write("\t[\"" + bundlePath + "\"] = {\n");
-
-            int count = 1;
-            List<string> dependList = FindDependencies(kvp.Key);
-            foreach (string depend in dependList)
-            {
-                sw.Write(string.Format("\t\t[{0}] = \"{1}\",\n", count, depend));
-                count++;
-            }
-
-            sw.Write("\t},\n");
-        }
-        sw.Write("}\n");
-
         sw.Flush();
         sw.Close();
         fs.Close();
@@ -225,7 +180,7 @@ public class Packager
             foreach (string guid in guids)
             {
                 string assetPath = AssetDatabase.GUIDToAssetPath(guid);
-                string bundlePath = assetPath.Replace("Assets/" + resPath, "");
+                string bundlePath = assetPath.Replace("Assets/" + srcPath, "");
 
                 List<string> subDependList = FindDependencies(guid);
                 foreach (string subDepend in subDependList)

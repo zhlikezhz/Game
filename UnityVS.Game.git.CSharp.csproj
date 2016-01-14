@@ -419,7 +419,7 @@
   <ItemGroup>
     <None Include="Assets\Build\Lua\Effect\Scale_N2B2N.lua.txt" />
     <None Include="Assets\Build\Lua\Init.lua.txt" />
-    <None Include="Assets\Build\Lua\MainCityPanel.lua.txt" />
+    <None Include="Assets\Build\Lua\Panel\MainCityPanel.lua.txt" />
     <None Include="Assets\Build\Lua\Start.lua.txt" />
     <None Include="Assets\Build\Lua\test.lua.txt" />
     <None Include="Assets\Build\Lua\uLua\3rd\cjson\json2lua.lua.txt" />

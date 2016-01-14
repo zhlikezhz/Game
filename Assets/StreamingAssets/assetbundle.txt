@@ -11,15 +11,6 @@
     
     {
         "md5" : "",        
-        "name" : "Lua/MainCityPanel.lua.txt",        
-        "dependAssets" : 
-        [
-            
-        ]
-    },    
-    
-    {
-        "md5" : "",        
         "name" : "Lua/Start.lua.txt",        
         "dependAssets" : 
         [
@@ -59,7 +50,7 @@
             "Sprites/UI/Atlas/Atlas_MainCity.png",            
             "Sprites/UI/Atlas/Atlas_MainCity.mat",            
             "Sprites/UI/Atlas/Atlas_MainCity.prefab",            
-            "Lua/MainCityPanel.lua.txt"
+            "Lua/Panel/MainCityPanel.lua.txt"
         ]
     },    
     
@@ -136,6 +127,15 @@
     {
         "md5" : "",        
         "name" : "Lua/Effect/Scale_N2B2N.lua.txt",        
+        "dependAssets" : 
+        [
+            
+        ]
+    },    
+    
+    {
+        "md5" : "",        
+        "name" : "Lua/Panel/MainCityPanel.lua.txt",        
         "dependAssets" : 
         [
             

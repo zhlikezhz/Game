@@ -83,7 +83,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Editor\Packager.cs" />
+    <Compile Include="Assets\Editor\AssetBundleTools.cs" />
+    <Compile Include="Assets\Editor\Tools.cs" />
     <Compile Include="Assets\Plugin\NGUI\Examples\Scripts\InventorySystem\Editor\InvDatabaseInspector.cs" />
     <Compile Include="Assets\Plugin\NGUI\Examples\Scripts\InventorySystem\Editor\InvFindItem.cs" />
     <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\ActiveAnimationEditor.cs" />
@@ -195,7 +196,7 @@
   <ItemGroup>
     <None Include="Assets\Build\Lua\Effect\Scale_N2B2N.lua.txt" />
     <None Include="Assets\Build\Lua\Init.lua.txt" />
-    <None Include="Assets\Build\Lua\MainCityPanel.lua.txt" />
+    <None Include="Assets\Build\Lua\Panel\MainCityPanel.lua.txt" />
     <None Include="Assets\Build\Lua\Start.lua.txt" />
     <None Include="Assets\Build\Lua\test.lua.txt" />
     <None Include="Assets\Build\Lua\uLua\3rd\cjson\json2lua.lua.txt" />

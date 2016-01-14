@@ -35,7 +35,7 @@ public class LuaDelegate : MonoBehaviour
         if (luaFile == null || string.IsNullOrEmpty(luaFile.text))
             return;
 
-        object[] luaRet = GameEngine.Instance.LuaMgr.DoFile(luaFile.name);
+        object[] luaRet = GameEngine.Instance.LuaMgr.DoString(luaFile.text);
         if (luaRet != null && luaRet.Length >= 1)
         {
             this.LuaModule = luaRet[0] as LuaTable;

@@ -888,41 +888,5 @@ public static class LuaBinding
         AssetDatabase.Refresh();
     }
 
-    [MenuItem("Lua/convert lua selected to txt", false, 20)]
-    public static void ConvertLua2Txt()
-    {
-        Object[] objs = Selection.objects;
-        foreach(Object obj in objs)
-        {
-            string assetPath = AssetDatabase.GetAssetPath(obj);
-            if (assetPath.EndsWith(".lua"))
-            {
-                string newAssetPath = assetPath + ".txt";
-                AssetDatabase.DeleteAsset(newAssetPath);
-                AssetDatabase.CopyAsset(assetPath, newAssetPath);
-            }
-        }
-        AssetDatabase.Refresh();
-    }
 
-    [MenuItem("Lua/convert lua folder to txt", false, 21)]
-    public static void ConvertLuaFolder2Txt()
-    {
-        string path = Application.dataPath + "/Build/Lua";
-        if (Directory.Exists(path))
-        {
-            string[] files = Directory.GetFiles(path, "*.*", SearchOption.AllDirectories);
-            foreach(string file in files)
-            {
-                if (file.EndsWith(".lua"))
-                {
-                    string assetPath = file.Replace(Application.dataPath, "Assets");
-                    string newAssetPath = assetPath + ".txt";
-                    AssetDatabase.DeleteAsset(newAssetPath);
-                    AssetDatabase.CopyAsset(assetPath, newAssetPath);
-                }
-            }
-            AssetDatabase.Refresh();
-        }
-    }
 }
