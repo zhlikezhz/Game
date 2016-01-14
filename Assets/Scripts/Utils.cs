@@ -1,20 +1,33 @@
 ﻿using System;
 using System.IO;
-using System.Text; 
-using System.Collections;  
+using System.Text;
+using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
 
 public class Utils
 {
-    public static string[] LuaPaths()
+    static List<string> luaPaths = new List<string> { "Lua/uLua", "Lua" };
+
+    public static List<string> LuaPaths
     {
-        string[] luaPaths = {
-                StreamingAssetsPath() + "/Scripts/Lua/uLua/",
-                StreamingAssetsPath() + "/Scripts/Lua/",
-            };
-        return luaPaths;
+        get { return luaPaths; }
+    }
+
+    public static void AddLuaPath(string path)
+    {
+        luaPaths.Add(path);
+    }
+
+    public static GameEngine Engine()
+    {
+        return GameEngine.Instance;
+    }
+
+    public static AssetBundleMgr BundleMgr()
+    {
+        return GameEngine.Instance.BundleMgr;
     }
 
     public static byte[] LuaLoader(string filename)
@@ -34,36 +47,32 @@ public class Utils
 
 
         byte[] str = null;
-        string[] luaPaths = LuaPaths();
+        List<string> luaPaths = LuaPaths;
         foreach (string path in luaPaths)
         {
-            string fullPath = path + filename + ".lua.txt";
+            string fullPath = "";
+            if (GameSetting.isEditorModel)
+            {
+                fullPath = string.Format("{0}/Build/{1}/{2}.lua.txt", Application.dataPath, path, filename);
+            }
+            else
+            {
+                fullPath = string.Format("{0}{1}/{2}.lua.txt.assetbundle", StreamingAssetsPath(), path, filename);
+            }
             fullPath = fullPath.Replace('\\', '/');
+
             if (File.Exists(fullPath))
             {
-                str = File.ReadAllBytes(fullPath);
+                string assetName = string.Format("{0}/{1}.lua.txt", path, filename);
+                TextAsset asset = BundleMgr().LoadAsset(assetName) as TextAsset;
+                str = asset.bytes;
+                return str;
             }
         }
         return str;
     }
 
     public static string StreamingAssetsPath()
-    {
-        if (Application.platform == RuntimePlatform.IPhonePlayer)
-        {
-            return Application.streamingAssetsPath;
-        }
-        else if (Application.platform == RuntimePlatform.Android)
-        {
-            return Application.streamingAssetsPath;
-        }
-        else
-        {
-            return Application.dataPath + "/Build";
-        }
-    }
-
-    public static string StreamingAssetBundelPath()
     {
         if (Application.platform == RuntimePlatform.IPhonePlayer)
         {
@@ -75,23 +84,24 @@ public class Utils
         }
         else
         {
-            return "file://" + Application.dataPath + "/StreamingAssets/";
+            return Application.dataPath + "/StreamingAssets/";
         }
     }
 
-    public static string PersistentDataPath()
+    public static string LocalAssetBundlePath()
     {
         if (Application.platform == RuntimePlatform.IPhonePlayer)
         {
-            return Application.persistentDataPath;
+            return Application.dataPath + "/Raw/";
         }
         else if (Application.platform == RuntimePlatform.Android)
         {
-            return Application.persistentDataPath;
+            return "jar:file://" + Application.dataPath + "!/assets/";
         }
         else
         {
-            return Application.persistentDataPath;
+            //return "file://" + Application.dataPath + "/StreamingAssets/";
+            return Application.dataPath + "/StreamingAssets/";
         }
     }
 
@@ -126,10 +136,11 @@ public class Utils
             file.Close();
 
             StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < retVal.Length; i++) {
+            for (int i = 0; i < retVal.Length; i++)
+            {
                 sb.Append(retVal[i].ToString("x2"));
             }
-            return sb.ToString(); 
+            return sb.ToString();
         }
         catch (Exception ex)
         {

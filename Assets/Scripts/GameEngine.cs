@@ -37,16 +37,17 @@ public class GameEngine : MonoBehaviour
     void Init()
     {
         bundleMgr = gameObject.AddComponent<AssetBundleMgr>();
-
         luaMgr = new LuaScriptMgr();
         LuaStatic.Load = Utils.LuaLoader;
 
         bundleMgr.Init();
-        luaMgr.Start();
+        Utils.DoFile("Init");
     }
 
     void Start()
     {
+        luaMgr.Start();
+
         Object guanyu = BundleMgr.LoadAsset("Prefabs/guanyu.prefab");
         GameObject.Instantiate(guanyu);
 

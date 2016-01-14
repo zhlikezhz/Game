@@ -1,11 +1,10 @@
-﻿#define RESOURCES_DEBUG
-using UnityEngine;
+﻿using UnityEngine;
 using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 
 #if UNITY_EDITOR
-    using UnityEditor;
+using UnityEditor;
 #endif
 
 public class AssetBundleMgr : MonoBehaviour
@@ -19,7 +18,7 @@ public class AssetBundleMgr : MonoBehaviour
 
     public void Init()
     {
-        Caching.CleanCache();
+        //Caching.CleanCache();
         InitBundleDependency();
     }
 
@@ -40,7 +39,7 @@ public class AssetBundleMgr : MonoBehaviour
         if (bundleDependency.ContainsKey(path))
         {
             List<string> dependencies = bundleDependency[path].dependAssets;
-            foreach ( string dependFile in dependencies )
+            foreach (string dependFile in dependencies)
             {
                 if (isLoadedAsset(path) == false)
                 {
@@ -64,7 +63,7 @@ public class AssetBundleMgr : MonoBehaviour
             return;
         }
 
-        if(isLoadingAsset(path))
+        if (isLoadingAsset(path))
         {
             Debug.LogWarning(string.Format("{0} asset loading!!!", path));
             return;
@@ -100,7 +99,7 @@ public class AssetBundleMgr : MonoBehaviour
                 }
             }
         }
-        if(assetRef.ContainsKey(path))
+        if (assetRef.ContainsKey(path))
         {
             assetRef[path]--;
         }
@@ -108,7 +107,7 @@ public class AssetBundleMgr : MonoBehaviour
 
     public void RefAssets(string path)
     {
-        if(assetRef.ContainsKey(path))
+        if (assetRef.ContainsKey(path))
         {
             assetRef[path]++;
         }
@@ -122,12 +121,12 @@ public class AssetBundleMgr : MonoBehaviour
     {
         Dictionary<string, int> tmp = new Dictionary<string, int>(assetRef);
 
-        foreach(var item in tmp)
+        foreach (var item in tmp)
         {
-            if(item.Value <= 0)
+            if (item.Value <= 0)
             {
                 assetRef.Remove(item.Key);
-                if(loadedList.ContainsKey(item.Key))
+                if (loadedList.ContainsKey(item.Key))
                 {
                     Resources.UnloadAsset(loadedList[item.Key]);
                     loadedList.Remove(item.Key);
@@ -149,61 +148,76 @@ public class AssetBundleMgr : MonoBehaviour
 
     private void Load(string path)
     {
-#if RESOURCES_DEBUG
-        loadingList.Add(path);
-        string fullpath = FullPath(path);
-        loadedList[path] = Resources.LoadAssetAtPath(fullpath, typeof(Object));
-        loadingList.Remove(path);
-#else
-        loadingList.Add(path);
-        string fullpath = FullPath(path);
-        WWW bundle = WWW.LoadFromCacheOrDownload(fullpath, 1);
-        AssetBundle asset = bundle.assetBundle;
-        loadedList[path] = asset.Load(GetAssetName(path), typeof(Object));
-        StartCoroutine(UnloadAssetBundle(asset));
-        bundle = null;
+        if (GameSetting.isEditorModel)
+        {
+            loadingList.Add(path);
+            string fullpath = FullPath(path);
+            loadedList[path] = Resources.LoadAssetAtPath(fullpath, typeof(Object));
+            loadingList.Remove(path);
+        }
+        else
+        {
+            loadingList.Add(path);
 
-        loadingList.Remove(path);
-#endif
+            string fullpath = FullPath(path);
+            /*
+            WWW bundle = WWW.LoadFromCacheOrDownload(fullpath, 1);
+            AssetBundle asset = bundle.assetBundle;
+            */
+            AssetBundle asset = AssetBundle.CreateFromFile(fullpath);
+
+            loadedList[path] = asset.Load(GetAssetName(path), typeof(Object));
+            StartCoroutine(UnloadAssetBundle(asset));
+            //bundle = null;
+
+            loadingList.Remove(path);
+        }
     }
 
     private IEnumerator LoadAsync(string path, AssetFunc callback = null)
     {
-#if RESOURCES_DEBUG
-        loadingList.Add(path);
-        string fullpath = FullPath(path);
-        Object obj = Resources.LoadAssetAtPath(fullpath, typeof(Object));
-        yield return obj;
-
-        loadedList[path] = obj;
-
-        if (callback != null)
+        if (GameSetting.isEditorModel)
         {
-            callback(loadedList[path]);
+            loadingList.Add(path);
+            string fullpath = FullPath(path);
+            Object obj = Resources.LoadAssetAtPath(fullpath, typeof(Object));
+            yield return obj;
+
+            loadedList[path] = obj;
+
+            if (callback != null)
+            {
+                callback(loadedList[path]);
+            }
+
+            loadingList.Remove(path);
         }
-
-        loadingList.Remove(path);
-#else
-        loadingList.Add(path);
-        string fullpath = FullPath(path);
-        WWW bundle = WWW.LoadFromCacheOrDownload(fullpath, 1);
-        yield return bundle;
-
-        AssetBundle asset = bundle.assetBundle;
-        AssetBundleRequest req = asset.LoadAsync(GetAssetName(path), typeof(Object));
-        yield return req;
-
-        loadedList[path] = req.asset;
-        StartCoroutine(UnloadAssetBundle(asset));
-        bundle = null;
-
-        if (callback != null) 
+        else
         {
-            callback(loadedList[path]);
-        }
+            loadingList.Add(path);
+            string fullpath = FullPath(path);
+            /*
+            WWW bundle = WWW.LoadFromCacheOrDownload(fullpath, 1);
+            yield return bundle;
+            AssetBundle asset = bundle.assetBundle;
+            */
+            AssetBundle asset = AssetBundle.CreateFromFile(fullpath);
+            yield return asset;
 
-        loadingList.Remove(path);
-#endif
+            AssetBundleRequest req = asset.LoadAsync(GetAssetName(path), typeof(Object));
+            yield return req;
+
+            loadedList[path] = req.asset;
+            StartCoroutine(UnloadAssetBundle(asset));
+            //bundle = null;
+
+            if (callback != null)
+            {
+                callback(loadedList[path]);
+            }
+
+            loadingList.Remove(path);
+        }
     }
 
     private IEnumerator UnloadAssetBundle(AssetBundle bundle)
@@ -219,24 +233,28 @@ public class AssetBundleMgr : MonoBehaviour
 
     private string FullPath(string path)
     {
-#if RESOURCES_DEBUG
-        return "Assets/Build/" + path;
-#else
-        return Utils.StreamingAssetBundelPath() + "/" + path + ".assetbundle";
-#endif
+        if (GameSetting.isEditorModel)
+        {
+            return "Assets/Build/" + path;
+        }
+        else
+        {
+            return Utils.LocalAssetBundlePath() + path + ".assetbundle";
+        }
     }
 
     private void InitBundleDependency()
     {
-#if !RESOURCES_DEBUG
-        string denpendencyFile = FullPath("assetbundle.txt");
-        TextAsset asset = AssetDatabase.LoadAssetAtPath("Assets/StreamingAssets/assetbundle.txt", typeof(TextAsset)) as TextAsset;
-        bundleData = LitJson.JsonMapper.ToObject<List<AssetBundleData>>(asset.text);
-
-        foreach(AssetBundleData bundle in bundleData) 
+        if (!GameSetting.isEditorModel)
         {
-            bundleDependency.Add(bundle.name, bundle);
+            string denpendencyFile = FullPath("assetbundle.txt");
+            TextAsset asset = AssetDatabase.LoadAssetAtPath("Assets/StreamingAssets/assetbundle.txt", typeof(TextAsset)) as TextAsset;
+            bundleData = LitJson.JsonMapper.ToObject<List<AssetBundleData>>(asset.text);
+
+            foreach (AssetBundleData bundle in bundleData)
+            {
+                bundleDependency.Add(bundle.name, bundle);
+            }
         }
-#endif
     }
 }
