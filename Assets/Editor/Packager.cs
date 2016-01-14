@@ -115,6 +115,7 @@ public class Packager
         }
 
         BuildAssetBundleOptions options = BuildAssetBundleOptions.CollectDependencies |
+                                          BuildAssetBundleOptions.UncompressedAssetBundle |
                                           BuildAssetBundleOptions.CompleteAssets |
                                           BuildAssetBundleOptions.DeterministicAssetBundle;
 

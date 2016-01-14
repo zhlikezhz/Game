@@ -1,2 +1,0 @@
-require = Utils.DoFile
-require("test")

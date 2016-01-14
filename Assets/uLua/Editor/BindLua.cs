@@ -354,7 +354,7 @@ public static class LuaBinding
             wrapfiles.Add("import '" + wrapfile + "'");
         }
         if (AppConst.AutoWrapMode) {
-            string wrapfile = Application.dataPath + "/Build/Scripts/Lua/uLua/System/Wrap.lua";
+            string wrapfile = Application.dataPath + "/Build/Lua/uLua/System/Wrap.lua.txt";
             File.WriteAllLines(wrapfile, wrapfiles.ToArray());
         }
         sb.AppendLine("\t\t}");
@@ -395,7 +395,7 @@ public static class LuaBinding
             textWriter.Close();
         }
         if (AppConst.AutoWrapMode) {
-            string wrapfile = Application.dataPath + "/Build/Scripts/Lua/uLua/System/Wrap.lua";
+            string wrapfile = Application.dataPath + "/Build/Lua/uLua/System/Wrap.lua.txt";
             File.WriteAllText(wrapfile, string.Empty);
         }
         ClearFiles(AppConst.uLuaPath + "/Source/LuaWrap/");
@@ -908,7 +908,7 @@ public static class LuaBinding
     [MenuItem("Lua/convert lua folder to txt", false, 21)]
     public static void ConvertLuaFolder2Txt()
     {
-        string path = Application.dataPath + "/Build/Scripts/Lua";
+        string path = Application.dataPath + "/Build/Lua";
         if (Directory.Exists(path))
         {
             string[] files = Directory.GetFiles(path, "*.*", SearchOption.AllDirectories);

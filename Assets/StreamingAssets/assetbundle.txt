@@ -2,6 +2,42 @@
     
     {
         "md5" : "",        
+        "name" : "Lua/Init.lua.txt",        
+        "dependAssets" : 
+        [
+            
+        ]
+    },    
+    
+    {
+        "md5" : "",        
+        "name" : "Lua/MainCityPanel.lua.txt",        
+        "dependAssets" : 
+        [
+            
+        ]
+    },    
+    
+    {
+        "md5" : "",        
+        "name" : "Lua/Start.lua.txt",        
+        "dependAssets" : 
+        [
+            
+        ]
+    },    
+    
+    {
+        "md5" : "",        
+        "name" : "Lua/test.lua.txt",        
+        "dependAssets" : 
+        [
+            
+        ]
+    },    
+    
+    {
+        "md5" : "",        
         "name" : "Prefabs/guanyu.prefab",        
         "dependAssets" : 
         [
@@ -23,7 +59,7 @@
             "Sprites/UI/Atlas/Atlas_MainCity.png",            
             "Sprites/UI/Atlas/Atlas_MainCity.mat",            
             "Sprites/UI/Atlas/Atlas_MainCity.prefab",            
-            "Scripts/Lua/MainCityPanel.lua.txt"
+            "Lua/MainCityPanel.lua.txt"
         ]
     },    
     
@@ -99,7 +135,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/Init.lua.txt",        
+        "name" : "Lua/Effect/Scale_N2B2N.lua.txt",        
         "dependAssets" : 
         [
             
@@ -108,7 +144,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/MainCityPanel.lua.txt",        
+        "name" : "Lua/uLua/containers.lua.txt",        
         "dependAssets" : 
         [
             
@@ -117,7 +153,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/Start.lua.txt",        
+        "name" : "Lua/uLua/debugger.lua.txt",        
         "dependAssets" : 
         [
             
@@ -126,7 +162,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/test.lua.txt",        
+        "name" : "Lua/uLua/decoder.lua.txt",        
         "dependAssets" : 
         [
             
@@ -135,7 +171,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/Effect/Scale_N2B2N.lua.txt",        
+        "name" : "Lua/uLua/descriptor.lua.txt",        
         "dependAssets" : 
         [
             
@@ -144,7 +180,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/containers.lua.txt",        
+        "name" : "Lua/uLua/encoder.lua.txt",        
         "dependAssets" : 
         [
             
@@ -153,7 +189,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/debugger.lua.txt",        
+        "name" : "Lua/uLua/eventlib.lua.txt",        
         "dependAssets" : 
         [
             
@@ -162,7 +198,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/decoder.lua.txt",        
+        "name" : "Lua/uLua/events.lua.txt",        
         "dependAssets" : 
         [
             
@@ -171,7 +207,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/descriptor.lua.txt",        
+        "name" : "Lua/uLua/listener.lua.txt",        
         "dependAssets" : 
         [
             
@@ -180,7 +216,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/encoder.lua.txt",        
+        "name" : "Lua/uLua/person_pb.lua.txt",        
         "dependAssets" : 
         [
             
@@ -189,7 +225,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/eventlib.lua.txt",        
+        "name" : "Lua/uLua/protobuf.lua.txt",        
         "dependAssets" : 
         [
             
@@ -198,7 +234,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/events.lua.txt",        
+        "name" : "Lua/uLua/text_format.lua.txt",        
         "dependAssets" : 
         [
             
@@ -207,7 +243,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/listener.lua.txt",        
+        "name" : "Lua/uLua/type_checkers.lua.txt",        
         "dependAssets" : 
         [
             
@@ -216,7 +252,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/person_pb.lua.txt",        
+        "name" : "Lua/uLua/wire_format.lua.txt",        
         "dependAssets" : 
         [
             
@@ -225,7 +261,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/protobuf.lua.txt",        
+        "name" : "Lua/uLua/Common/define.lua.txt",        
         "dependAssets" : 
         [
             
@@ -234,7 +270,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/text_format.lua.txt",        
+        "name" : "Lua/uLua/Common/functions.lua.txt",        
         "dependAssets" : 
         [
             
@@ -243,7 +279,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/type_checkers.lua.txt",        
+        "name" : "Lua/uLua/Common/protocal.lua.txt",        
         "dependAssets" : 
         [
             
@@ -252,7 +288,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/wire_format.lua.txt",        
+        "name" : "Lua/uLua/Logic/GameManager.lua.txt",        
         "dependAssets" : 
         [
             
@@ -261,7 +297,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/Common/define.lua.txt",        
+        "name" : "Lua/uLua/Logic/LuaClass.lua.txt",        
         "dependAssets" : 
         [
             
@@ -270,7 +306,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/Common/functions.lua.txt",        
+        "name" : "Lua/uLua/Logic/Network.lua.txt",        
         "dependAssets" : 
         [
             
@@ -279,7 +315,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/Common/protocal.lua.txt",        
+        "name" : "Lua/uLua/System/Bounds.lua.txt",        
         "dependAssets" : 
         [
             
@@ -288,7 +324,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/Logic/GameManager.lua.txt",        
+        "name" : "Lua/uLua/System/Build.bat",        
         "dependAssets" : 
         [
             
@@ -297,7 +333,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/Logic/LuaClass.lua.txt",        
+        "name" : "Lua/uLua/System/class.lua.txt",        
         "dependAssets" : 
         [
             
@@ -306,7 +342,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/Logic/Network.lua.txt",        
+        "name" : "Lua/uLua/System/Color.lua.txt",        
         "dependAssets" : 
         [
             
@@ -315,7 +351,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/System/Bounds.lua.txt",        
+        "name" : "Lua/uLua/System/Coroutine.lua.txt",        
         "dependAssets" : 
         [
             
@@ -324,7 +360,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/System/Build.bat",        
+        "name" : "Lua/uLua/System/Event.lua.txt",        
         "dependAssets" : 
         [
             
@@ -333,7 +369,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/System/class.lua.txt",        
+        "name" : "Lua/uLua/System/Global.lua.txt",        
         "dependAssets" : 
         [
             
@@ -342,7 +378,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/System/Color.lua.txt",        
+        "name" : "Lua/uLua/System/Layer.lua.txt",        
         "dependAssets" : 
         [
             
@@ -351,7 +387,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/System/Coroutine.lua.txt",        
+        "name" : "Lua/uLua/System/List.lua.txt",        
         "dependAssets" : 
         [
             
@@ -360,7 +396,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/System/Event.lua.txt",        
+        "name" : "Lua/uLua/System/Main.lua.txt",        
         "dependAssets" : 
         [
             
@@ -369,7 +405,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/System/Global.lua.txt",        
+        "name" : "Lua/uLua/System/Math.lua.txt",        
         "dependAssets" : 
         [
             
@@ -378,7 +414,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/System/Layer.lua.txt",        
+        "name" : "Lua/uLua/System/Plane.lua.txt",        
         "dependAssets" : 
         [
             
@@ -387,7 +423,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/System/List.lua.txt",        
+        "name" : "Lua/uLua/System/Quaternion.lua.txt",        
         "dependAssets" : 
         [
             
@@ -396,7 +432,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/System/Main.lua.txt",        
+        "name" : "Lua/uLua/System/Ray.lua.txt",        
         "dependAssets" : 
         [
             
@@ -405,7 +441,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/System/Math.lua.txt",        
+        "name" : "Lua/uLua/System/Raycast.lua.txt",        
         "dependAssets" : 
         [
             
@@ -414,7 +450,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/System/Plane.lua.txt",        
+        "name" : "Lua/uLua/System/readme.txt",        
         "dependAssets" : 
         [
             
@@ -423,7 +459,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/System/Quaternion.lua.txt",        
+        "name" : "Lua/uLua/System/Set.lua.txt",        
         "dependAssets" : 
         [
             
@@ -432,7 +468,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/System/Ray.lua.txt",        
+        "name" : "Lua/uLua/System/strict.lua.txt",        
         "dependAssets" : 
         [
             
@@ -441,7 +477,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/System/Raycast.lua.txt",        
+        "name" : "Lua/uLua/System/Test.lua.txt",        
         "dependAssets" : 
         [
             
@@ -450,7 +486,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/System/readme.txt",        
+        "name" : "Lua/uLua/System/Time.lua.txt",        
         "dependAssets" : 
         [
             
@@ -459,7 +495,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/System/Set.lua.txt",        
+        "name" : "Lua/uLua/System/Timer.lua.txt",        
         "dependAssets" : 
         [
             
@@ -468,7 +504,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/System/strict.lua.txt",        
+        "name" : "Lua/uLua/System/Touch.lua.txt",        
         "dependAssets" : 
         [
             
@@ -477,7 +513,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/System/Test.lua.txt",        
+        "name" : "Lua/uLua/System/Vector2.lua.txt",        
         "dependAssets" : 
         [
             
@@ -486,7 +522,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/System/Time.lua.txt",        
+        "name" : "Lua/uLua/System/Vector3.lua.txt",        
         "dependAssets" : 
         [
             
@@ -495,7 +531,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/System/Timer.lua.txt",        
+        "name" : "Lua/uLua/System/Vector4.lua.txt",        
         "dependAssets" : 
         [
             
@@ -504,7 +540,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/System/Touch.lua.txt",        
+        "name" : "Lua/uLua/System/Wrap.lua.txt",        
         "dependAssets" : 
         [
             
@@ -513,7 +549,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/System/Vector2.lua.txt",        
+        "name" : "Lua/uLua/3rd/cjson/example1.json",        
         "dependAssets" : 
         [
             
@@ -522,7 +558,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/System/Vector3.lua.txt",        
+        "name" : "Lua/uLua/3rd/cjson/example2.json",        
         "dependAssets" : 
         [
             
@@ -531,7 +567,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/System/Vector4.lua.txt",        
+        "name" : "Lua/uLua/3rd/cjson/example3.json",        
         "dependAssets" : 
         [
             
@@ -540,7 +576,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/System/Wrap.lua",        
+        "name" : "Lua/uLua/3rd/cjson/example4.json",        
         "dependAssets" : 
         [
             
@@ -549,7 +585,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/System/Wrap.lua.txt",        
+        "name" : "Lua/uLua/3rd/cjson/example5.json",        
         "dependAssets" : 
         [
             
@@ -558,7 +594,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/cjson/example1.json",        
+        "name" : "Lua/uLua/3rd/cjson/json2lua.lua.txt",        
         "dependAssets" : 
         [
             
@@ -567,7 +603,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/cjson/example2.json",        
+        "name" : "Lua/uLua/3rd/cjson/lua2json.lua.txt",        
         "dependAssets" : 
         [
             
@@ -576,7 +612,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/cjson/example3.json",        
+        "name" : "Lua/uLua/3rd/cjson/test.lua.txt",        
         "dependAssets" : 
         [
             
@@ -585,7 +621,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/cjson/example4.json",        
+        "name" : "Lua/uLua/3rd/cjson/util.lua.txt",        
         "dependAssets" : 
         [
             
@@ -594,7 +630,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/cjson/example5.json",        
+        "name" : "Lua/uLua/3rd/luabitop/bitbench.lua.txt",        
         "dependAssets" : 
         [
             
@@ -603,7 +639,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/cjson/json2lua.lua.txt",        
+        "name" : "Lua/uLua/3rd/luabitop/bittest.lua.txt",        
         "dependAssets" : 
         [
             
@@ -612,7 +648,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/cjson/lua2json.lua.txt",        
+        "name" : "Lua/uLua/3rd/luabitop/installpath.lua.txt",        
         "dependAssets" : 
         [
             
@@ -621,7 +657,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/cjson/test.lua.txt",        
+        "name" : "Lua/uLua/3rd/luabitop/Makefile",        
         "dependAssets" : 
         [
             
@@ -630,7 +666,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/cjson/util.lua.txt",        
+        "name" : "Lua/uLua/3rd/luabitop/Makefile.mingw",        
         "dependAssets" : 
         [
             
@@ -639,7 +675,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/luabitop/bitbench.lua.txt",        
+        "name" : "Lua/uLua/3rd/luabitop/md5test.lua.txt",        
         "dependAssets" : 
         [
             
@@ -648,7 +684,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/luabitop/bittest.lua.txt",        
+        "name" : "Lua/uLua/3rd/luabitop/msvcbuild.bat",        
         "dependAssets" : 
         [
             
@@ -657,7 +693,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/luabitop/installpath.lua.txt",        
+        "name" : "Lua/uLua/3rd/luabitop/msvctest.bat",        
         "dependAssets" : 
         [
             
@@ -666,7 +702,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/luabitop/Makefile",        
+        "name" : "Lua/uLua/3rd/luabitop/nsievebits.lua.txt",        
         "dependAssets" : 
         [
             
@@ -675,7 +711,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/luabitop/Makefile.mingw",        
+        "name" : "Lua/uLua/3rd/luabitop/README",        
         "dependAssets" : 
         [
             
@@ -684,7 +720,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/luabitop/md5test.lua.txt",        
+        "name" : "Lua/uLua/3rd/pbc/addressbook.pb",        
         "dependAssets" : 
         [
             
@@ -693,7 +729,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/luabitop/msvcbuild.bat",        
+        "name" : "Lua/uLua/3rd/pbc/addressbook.proto",        
         "dependAssets" : 
         [
             
@@ -702,7 +738,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/luabitop/msvctest.bat",        
+        "name" : "Lua/uLua/3rd/pbc/parser.lua.txt",        
         "dependAssets" : 
         [
             
@@ -711,7 +747,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/luabitop/nsievebits.lua.txt",        
+        "name" : "Lua/uLua/3rd/pbc/protobuf.lua.txt",        
         "dependAssets" : 
         [
             
@@ -720,7 +756,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/luabitop/README",        
+        "name" : "Lua/uLua/3rd/pbc/test.lua.txt",        
         "dependAssets" : 
         [
             
@@ -729,7 +765,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/pbc/addressbook.pb",        
+        "name" : "Lua/uLua/3rd/pbc/test2.lua.txt",        
         "dependAssets" : 
         [
             
@@ -738,7 +774,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/pbc/addressbook.proto",        
+        "name" : "Lua/uLua/3rd/pbc/testparser.lua.txt",        
         "dependAssets" : 
         [
             
@@ -747,7 +783,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/pbc/parser.lua.txt",        
+        "name" : "Lua/uLua/3rd/pblua/login.proto",        
         "dependAssets" : 
         [
             
@@ -756,7 +792,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/pbc/protobuf.lua.txt",        
+        "name" : "Lua/uLua/3rd/pblua/login_pb.lua.txt",        
         "dependAssets" : 
         [
             
@@ -765,7 +801,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/pbc/test.lua.txt",        
+        "name" : "Lua/uLua/3rd/sproto/print_r.lua.txt",        
         "dependAssets" : 
         [
             
@@ -774,7 +810,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/pbc/test2.lua.txt",        
+        "name" : "Lua/uLua/3rd/sproto/sproto.lua.txt",        
         "dependAssets" : 
         [
             
@@ -783,7 +819,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/pbc/testparser.lua.txt",        
+        "name" : "Lua/uLua/3rd/sproto/sprotoparser.lua.txt",        
         "dependAssets" : 
         [
             
@@ -792,7 +828,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/pblua/login.proto",        
+        "name" : "Lua/uLua/3rd/sproto/test.lua.txt",        
         "dependAssets" : 
         [
             
@@ -801,7 +837,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/pblua/login_pb.lua.txt",        
+        "name" : "Lua/uLua/3rd/sproto/testall.lua.txt",        
         "dependAssets" : 
         [
             
@@ -810,7 +846,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/sproto/print_r.lua.txt",        
+        "name" : "Lua/uLua/3rd/sproto/testrpc.lua.txt",        
         "dependAssets" : 
         [
             
@@ -819,7 +855,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/sproto/sproto.lua.txt",        
+        "name" : "Lua/uLua/3rd/luabitop/doc/api.html",        
         "dependAssets" : 
         [
             
@@ -828,7 +864,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/sproto/sprotoparser.lua.txt",        
+        "name" : "Lua/uLua/3rd/luabitop/doc/bluequad-print.css",        
         "dependAssets" : 
         [
             
@@ -837,7 +873,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/sproto/test.lua.txt",        
+        "name" : "Lua/uLua/3rd/luabitop/doc/bluequad.css",        
         "dependAssets" : 
         [
             
@@ -846,7 +882,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/sproto/testall.lua.txt",        
+        "name" : "Lua/uLua/3rd/luabitop/doc/changes.html",        
         "dependAssets" : 
         [
             
@@ -855,7 +891,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/sproto/testrpc.lua.txt",        
+        "name" : "Lua/uLua/3rd/luabitop/doc/contact.html",        
         "dependAssets" : 
         [
             
@@ -864,7 +900,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/luabitop/doc/api.html",        
+        "name" : "Lua/uLua/3rd/luabitop/doc/index.html",        
         "dependAssets" : 
         [
             
@@ -873,7 +909,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/luabitop/doc/bluequad-print.css",        
+        "name" : "Lua/uLua/3rd/luabitop/doc/install.html",        
         "dependAssets" : 
         [
             
@@ -882,7 +918,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/luabitop/doc/bluequad.css",        
+        "name" : "Lua/uLua/3rd/luabitop/doc/semantics.html",        
         "dependAssets" : 
         [
             
@@ -891,52 +927,7 @@
     
     {
         "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/luabitop/doc/changes.html",        
-        "dependAssets" : 
-        [
-            
-        ]
-    },    
-    
-    {
-        "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/luabitop/doc/contact.html",        
-        "dependAssets" : 
-        [
-            
-        ]
-    },    
-    
-    {
-        "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/luabitop/doc/index.html",        
-        "dependAssets" : 
-        [
-            
-        ]
-    },    
-    
-    {
-        "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/luabitop/doc/install.html",        
-        "dependAssets" : 
-        [
-            
-        ]
-    },    
-    
-    {
-        "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/luabitop/doc/semantics.html",        
-        "dependAssets" : 
-        [
-            
-        ]
-    },    
-    
-    {
-        "md5" : "",        
-        "name" : "Scripts/Lua/uLua/3rd/luabitop/doc/img/contact.png",        
+        "name" : "Lua/uLua/3rd/luabitop/doc/img/contact.png",        
         "dependAssets" : 
         [
             

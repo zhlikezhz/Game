@@ -1,0 +1,2 @@
+Utils = luanet.import_type('Utils')
+require = Utils.DoFile

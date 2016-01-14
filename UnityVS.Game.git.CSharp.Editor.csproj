@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F2124236-7B8B-06A1-B63E-B4A74429110B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
+    <CompilerResponseFile></CompilerResponseFile>
+    <UnityProjectType>Editor:5</UnityProjectType>
+    <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
+    <UnityVersion>4.6.2f1</UnityVersion>
+    <RootNamespace></RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Debug\</OutputPath>
+    <IntermediateOutputPath>Temp\UnityVS_obj\Debug\</IntermediateOutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>DEBUG;TRACE;UNITY_4_6_2;UNITY_4_6;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_IL2CPP;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;UNITY5_SCRIPTING_IN_UNITY4;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Release\</OutputPath>
+    <IntermediateOutputPath>Temp\UnityVS_obj\Release\</IntermediateOutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>TRACE;UNITY_4_6_2;UNITY_4_6;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_IL2CPP;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;UNITY5_SCRIPTING_IN_UNITY4;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="Boo.Lang" />
+    <Reference Include="UnityScript.Lang" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>Library\UnityAssemblies\UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Graphs">
+      <HintPath>Library\UnityAssemblies\UnityEditor.Graphs.dll</HintPath>
+    </Reference>
+    <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
+      <HintPath>Assets\Plugin\UnityVS\Editor\SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+    </Reference>
+    <Reference Include="SyntaxTree.VisualStudio.Unity.Messaging">
+      <HintPath>Assets\Plugin\UnityVS\Editor\SyntaxTree.VisualStudio.Unity.Messaging.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityVS.VersionSpecific">
+      <HintPath>Assets\Plugin\UnityVS\Editor\UnityVS.VersionSpecific.dll</HintPath>
+    </Reference>
+    <Reference Include="Debuger">
+      <HintPath>Assets\Plugins\Debuger.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="UnityVS.Game.git.CSharp.csproj">
+      <Project>{AB3832C0-A94A-C630-9AF1-A169D595E984}</Project>
+      <Name>UnityVS.Game.git.CSharp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Editor\Packager.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Examples\Scripts\InventorySystem\Editor\InvDatabaseInspector.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Examples\Scripts\InventorySystem\Editor\InvFindItem.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\ActiveAnimationEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\BMFontReader.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\ComponentSelector.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\EventDelegateDrawer.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\EventDelegateEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\FreeType.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\NGUIContextMenu.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\NGUIEditorExtensions.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\NGUIEditorTools.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\NGUIHandles.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\NGUIHelp.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\NGUIJson.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\NGUIMenu.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\NGUISelectionTools.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\NGUISettings.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\NGUISnap.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\NGUITransformInspector.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\PropertyBindingEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\PropertyReferenceDrawer.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\SpriteSelector.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\TweenAlphaEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\TweenColorEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\TweenFOVEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\TweenHeightEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\TweenOrthoSizeEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\TweenPositionEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\TweenRotationEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\TweenScaleEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\TweenTransformEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\TweenVolumeEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\TweenWidthEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UI2DSpriteEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIAnchorEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIAtlasInspector.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIAtlasMaker.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIBasicSpriteEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIButtonColorEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIButtonEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIButtonKeysEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIButtonMessageEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UICameraEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UICameraTool.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UICreateNewUIWizard.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UICreateWidgetWizard.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIDragObjectEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIDrawCallInspector.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIDrawCallViewer.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIEventTriggerEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIFontInspector.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIFontMaker.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIForwardEventsEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIGridEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIImageButtonInspector.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIInputEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIKeyNavigationEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UILabelInspector.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UILocalizeEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIPanelInspector.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIPanelTool.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIPlayAnimationEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIPlayTweenEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIPopupListInspector.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIPrefabTool.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIProgressBarEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIRectEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIRootEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIScrollBarEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIScrollViewEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UISliderEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UISnapshotPointEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UISpriteAnimationInspector.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UISpriteInspector.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIStretchEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UITableEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UITextureInspector.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UITexturePacker.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIToggleInspector.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UITweenerEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIWidgetContainerEditor.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIWidgetInspector.cs" />
+    <Compile Include="Assets\Plugin\NGUI\Scripts\Editor\UIWrapContentEditor.cs" />
+    <Compile Include="Assets\Plugin\spine-unity\Editor\AtlasAssetInspector.cs" />
+    <Compile Include="Assets\Plugin\spine-unity\Editor\BoneFollowerInspector.cs" />
+    <Compile Include="Assets\Plugin\spine-unity\Editor\BoundingBoxFollowerInspector.cs" />
+    <Compile Include="Assets\Plugin\spine-unity\Editor\Menus.cs" />
+    <Compile Include="Assets\Plugin\spine-unity\Editor\SkeletonAnimationInspector.cs" />
+    <Compile Include="Assets\Plugin\spine-unity\Editor\SkeletonAnimatorInspector.cs" />
+    <Compile Include="Assets\Plugin\spine-unity\Editor\SkeletonBaker.cs" />
+    <Compile Include="Assets\Plugin\spine-unity\Editor\SkeletonDataAssetInspector.cs" />
+    <Compile Include="Assets\Plugin\spine-unity\Editor\SkeletonRendererInspector.cs" />
+    <Compile Include="Assets\Plugin\spine-unity\Editor\SpineAttributeDrawers.cs" />
+    <Compile Include="Assets\Plugin\spine-unity\Editor\SpineEditorUtilities.cs" />
+    <Compile Include="Assets\Plugin\spine-unity\Ragdoll\Editor\SkeletonRagdoll2DInspector.cs" />
+    <Compile Include="Assets\Plugin\spine-unity\Ragdoll\Editor\SkeletonRagdollInspector.cs" />
+    <Compile Include="Assets\Plugin\spine-unity\SkeletonUtility\Editor\SkeletonUtilityBoneInspector.cs" />
+    <Compile Include="Assets\Plugin\spine-unity\SkeletonUtility\Editor\SkeletonUtilityInspector.cs" />
+    <Compile Include="Assets\Plugin\spine-unity\SkeletonUtility\Editor\SkeletonUtilitySubmeshRendererInspector.cs" />
+    <Compile Include="Assets\uLua\Editor\BindLua.cs" />
+    <Compile Include="Assets\uLua\Editor\WelcomeScreen.cs" />
+    <Compile Include="Assets\uLua\Editor\Wrap\ToLua_System_Delegate.cs" />
+    <Compile Include="Assets\uLua\Editor\Wrap\ToLua_System_Enum.cs" />
+    <Compile Include="Assets\uLua\Editor\Wrap\ToLua_System_Object.cs" />
+    <Compile Include="Assets\uLua\Editor\Wrap\ToLua_System_String.cs" />
+    <Compile Include="Assets\uLua\Editor\Wrap\ToLua_System_Type.cs" />
+    <Compile Include="Assets\uLua\Editor\Wrap\ToLua_UnityEngine_Object.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Build\Lua\Effect\Scale_N2B2N.lua.txt" />
+    <None Include="Assets\Build\Lua\Init.lua.txt" />
+    <None Include="Assets\Build\Lua\MainCityPanel.lua.txt" />
+    <None Include="Assets\Build\Lua\Start.lua.txt" />
+    <None Include="Assets\Build\Lua\test.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\3rd\cjson\json2lua.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\3rd\cjson\lua2json.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\3rd\cjson\test.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\3rd\cjson\util.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\3rd\luabitop\bitbench.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\3rd\luabitop\bittest.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\3rd\luabitop\installpath.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\3rd\luabitop\md5test.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\3rd\luabitop\nsievebits.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\3rd\pbc\parser.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\3rd\pbc\protobuf.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\3rd\pbc\test.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\3rd\pbc\test2.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\3rd\pbc\testparser.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\3rd\pblua\login_pb.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\3rd\sproto\print_r.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\3rd\sproto\sproto.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\3rd\sproto\sprotoparser.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\3rd\sproto\test.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\3rd\sproto\testall.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\3rd\sproto\testrpc.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\Common\define.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\Common\functions.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\Common\protocal.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\Logic\GameManager.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\Logic\LuaClass.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\Logic\Network.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\System\Bounds.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\System\Color.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\System\Coroutine.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\System\Event.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\System\Global.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\System\Layer.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\System\List.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\System\Main.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\System\Math.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\System\Plane.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\System\Quaternion.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\System\Ray.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\System\Raycast.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\System\Set.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\System\Test.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\System\Time.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\System\Timer.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\System\Touch.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\System\Vector2.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\System\Vector3.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\System\Vector4.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\System\Wrap.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\System\class.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\System\readme.txt" />
+    <None Include="Assets\Build\Lua\uLua\System\strict.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\containers.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\debugger.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\decoder.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\descriptor.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\encoder.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\eventlib.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\events.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\listener.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\person_pb.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\protobuf.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\text_format.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\type_checkers.lua.txt" />
+    <None Include="Assets\Build\Lua\uLua\wire_format.lua.txt" />
+    <None Include="Assets\Build\Spines\skeleton.atlas.txt" />
+    <None Include="Assets\Plugin\NGUI\Examples\Atlases\Fantasy\Fantasy Font - Normal.txt" />
+    <None Include="Assets\Plugin\NGUI\Examples\Atlases\Refractive\Refractive Font - Header.txt" />
+    <None Include="Assets\Plugin\NGUI\Examples\Atlases\Refractive\Refractive Font - Normal.txt" />
+    <None Include="Assets\Plugin\NGUI\Examples\Atlases\SciFi\SciFi Font - Header.txt" />
+    <None Include="Assets\Plugin\NGUI\Examples\Atlases\SciFi\SciFi Font - Normal.txt" />
+    <None Include="Assets\Plugin\NGUI\Examples\Atlases\Wooden\Arimo14.txt" />
+    <None Include="Assets\Plugin\NGUI\Examples\Atlases\Wooden\Arimo18.txt" />
+    <None Include="Assets\Plugin\NGUI\Examples\Atlases\Wooden\Arimo20.txt" />
+    <None Include="Assets\Plugin\NGUI\Examples\Models\Orc Armor\Orc Armor.shader" />
+    <None Include="Assets\Plugin\NGUI\Examples\Models\Orc\Orc Skin.shader" />
+    <None Include="Assets\Plugin\NGUI\Examples\Resources\Localization.txt" />
+    <None Include="Assets\Plugin\NGUI\Examples\Shaders\Refractive.shader" />
+    <None Include="Assets\Plugin\NGUI\Examples\Shaders\Unlit - Additive Colored.shader" />
+    <None Include="Assets\Plugin\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
+    <None Include="Assets\Plugin\NGUI\Examples\Shaders\Unlit - Depth.shader" />
+    <None Include="Assets\Plugin\NGUI\Examples\Shaders\Unlit - Masked Colored.shader" />
+    <None Include="Assets\Plugin\NGUI\ReadMe - 3.8.2.txt" />
+    <None Include="Assets\Plugin\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (TextureClip).shader" />
+    <None Include="Assets\Plugin\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 1.shader" />
+    <None Include="Assets\Plugin\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 2.shader" />
+    <None Include="Assets\Plugin\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 3.shader" />
+    <None Include="Assets\Plugin\NGUI\Resources\Shaders\Unlit - Premultiplied Colored.shader" />
+    <None Include="Assets\Plugin\NGUI\Resources\Shaders\Unlit - Text (TextureClip).shader" />
+    <None Include="Assets\Plugin\NGUI\Resources\Shaders\Unlit - Text 1.shader" />
+    <None Include="Assets\Plugin\NGUI\Resources\Shaders\Unlit - Text 2.shader" />
+    <None Include="Assets\Plugin\NGUI\Resources\Shaders\Unlit - Text 3.shader" />
+    <None Include="Assets\Plugin\NGUI\Resources\Shaders\Unlit - Text.shader" />
+    <None Include="Assets\Plugin\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (TextureClip).shader" />
+    <None Include="Assets\Plugin\NGUI\Resources\Shaders\Unlit - Transparent Colored (TextureClip).shader" />
+    <None Include="Assets\Plugin\NGUI\Resources\Shaders\Unlit - Transparent Colored 1.shader" />
+    <None Include="Assets\Plugin\NGUI\Resources\Shaders\Unlit - Transparent Colored 2.shader" />
+    <None Include="Assets\Plugin\NGUI\Resources\Shaders\Unlit - Transparent Colored 3.shader" />
+    <None Include="Assets\Plugin\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
+    <None Include="Assets\Plugin\NGUI\Resources\Shaders\Unlit - Transparent Masked 1.shader" />
+    <None Include="Assets\Plugin\NGUI\Resources\Shaders\Unlit - Transparent Masked 2.shader" />
+    <None Include="Assets\Plugin\NGUI\Resources\Shaders\Unlit - Transparent Masked 3.shader" />
+    <None Include="Assets\Plugin\NGUI\Resources\Shaders\Unlit - Transparent Masked.shader" />
+    <None Include="Assets\Plugin\NGUI\Resources\Shaders\Unlit - Transparent Packed 1.shader" />
+    <None Include="Assets\Plugin\NGUI\Resources\Shaders\Unlit - Transparent Packed 2.shader" />
+    <None Include="Assets\Plugin\NGUI\Resources\Shaders\Unlit - Transparent Packed 3.shader" />
+    <None Include="Assets\Plugin\NGUI\Resources\Shaders\Unlit - Transparent Packed.shader" />
+    <None Include="Assets\Plugin\spine-unity\Ghost\Shaders\SkeletonGhost.shader" />
+    <None Include="Assets\Plugin\spine-unity\Shaders\Bones.shader" />
+    <None Include="Assets\Plugin\spine-unity\Shaders\HiddenPass.shader" />
+    <None Include="Assets\Plugin\spine-unity\Shaders\Skeleton.shader" />
+    <None Include="Assets\Plugin\spine-unity\Shaders\SkeletonLit.shader" />
+    <None Include="Assets\StreamingAssets\assetbundle.txt" />
+    <None Include="Assets\uLua\Examples\04_ScriptsFromFile\ScriptsFromFile01.lua.txt" />
+    <None Include="Assets\uLua\Examples\A4_ButtonClick\ReadMe.txt" />
+    <None Include="Assets\uLua\README.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
+</Project>
