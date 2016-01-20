@@ -7,14 +7,14 @@ using System.Collections.Generic;
 using UnityEditor;
 #endif
 
-public class AssetBundleMgr : MonoBehaviour
+public class BundleManager : MonoBehaviour
 {
     public delegate void AssetFunc(Object asset);
     private List<string> loadingList = new List<string>();
-    private List<AssetBundleData> bundleData = new List<AssetBundleData>();
+    private List<BundleData> bundleData = new List<BundleData>();
     private Dictionary<string, int> assetRef = new Dictionary<string, int>();
     private Dictionary<string, Object> loadedList = new Dictionary<string, Object>();
-    private Dictionary<string, AssetBundleData> bundleDependency = new Dictionary<string, AssetBundleData>();
+    private Dictionary<string, BundleData> bundleDependency = new Dictionary<string, BundleData>();
 
     public void Init()
     {
@@ -249,9 +249,9 @@ public class AssetBundleMgr : MonoBehaviour
         {
             string denpendencyFile = FullPath("assetbundle.txt");
             TextAsset asset = AssetDatabase.LoadAssetAtPath("Assets/StreamingAssets/assetbundle.txt", typeof(TextAsset)) as TextAsset;
-            bundleData = LitJson.JsonMapper.ToObject<List<AssetBundleData>>(asset.text);
+            bundleData = LitJson.JsonMapper.ToObject<List<BundleData>>(asset.text);
 
-            foreach (AssetBundleData bundle in bundleData)
+            foreach (BundleData bundle in bundleData)
             {
                 bundleDependency.Add(bundle.name, bundle);
             }

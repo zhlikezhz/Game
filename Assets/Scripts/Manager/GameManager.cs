@@ -2,20 +2,20 @@
 using System.Collections;
 using LuaInterface;
 
-public class GameEngine : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     LuaScriptMgr luaMgr;
-    AssetBundleMgr bundleMgr;
-    public static GameEngine instance = null;
+    BundleManager bundleMgr;
+    public static GameManager instance = null;
 
-    public static GameEngine Instance
+    public static GameManager Instance
     {
         get
         {
             if(instance == null)
             {
-                GameObject obj = new GameObject("Game Engine");
-                instance = obj.AddComponent<GameEngine>();
+                GameObject obj = new GameObject("Game Manager");
+                instance = obj.AddComponent<GameManager>();
                 instance.Init();
 				DontDestroyOnLoad(obj);
             }
@@ -24,7 +24,7 @@ public class GameEngine : MonoBehaviour
         }
     }
 
-    public AssetBundleMgr BundleMgr
+    public BundleManager BundleMgr
     {
         get { return bundleMgr; }
     }
@@ -36,7 +36,7 @@ public class GameEngine : MonoBehaviour
 
     void Init()
     {
-        bundleMgr = gameObject.AddComponent<AssetBundleMgr>();
+        bundleMgr = gameObject.AddComponent<BundleManager>();
         luaMgr = new LuaScriptMgr();
         LuaStatic.Load = Utils.LuaLoader;
 
@@ -48,14 +48,20 @@ public class GameEngine : MonoBehaviour
     {
         luaMgr.Start();
 
-        Object guanyu = BundleMgr.LoadAsset("Prefabs/guanyu.prefab");
-        GameObject.Instantiate(guanyu);
+        Object guiPrefab = BundleMgr.LoadAsset("Prefabs/GUI.prefab");
+        GameObject gui = GameObject.Instantiate(guiPrefab) as GameObject;
+        gui.name = "GUI";
+
+        Object guanyuPrefab = BundleMgr.LoadAsset("Prefabs/guanyu.prefab");
+        GameObject guanyu = GameObject.Instantiate(guanyuPrefab) as GameObject;
+        guanyu.name = "guanyu";
+        //guanyu.transform.SetParent(gui.transform);
+        //guanyu.transform.localScale = new Vector3(1, 1, 1);
 
         Object mainCityPanel = BundleMgr.LoadAsset("Prefabs/MainCity.prefab");
         GameObject mainCity = GameObject.Instantiate(mainCityPanel) as GameObject;
         mainCity.name = "MainCity";
-        GameObject uiroot = GameObject.Find("UI Root");
-        mainCity.transform.SetParent(uiroot.transform);
+        mainCity.transform.SetParent(gui.transform);
         mainCity.transform.localScale = new Vector3(1, 1, 1);
 
         //BundleMgr.LoadAsyncAsset("Prefabs/MainCity.prefab", callback);

@@ -20,14 +20,14 @@ public class Utils
         luaPaths.Add(path);
     }
 
-    public static GameEngine Engine()
+    public static GameManager Engine()
     {
-        return GameEngine.Instance;
+        return GameManager.Instance;
     }
 
-    public static AssetBundleMgr BundleMgr()
+    public static BundleManager BundleMgr()
     {
-        return GameEngine.Instance.BundleMgr;
+        return GameManager.Instance.BundleMgr;
     }
 
     public static byte[] LuaLoader(string filename)
@@ -123,7 +123,7 @@ public class Utils
 
     public static void DoFile(string filename)
     {
-        GameEngine.Instance.LuaMgr.DoFile(filename);
+        GameManager.Instance.LuaMgr.DoFile(filename);
     }
 
     public static string MD5(string fileName)

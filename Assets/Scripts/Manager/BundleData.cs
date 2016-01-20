@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class AssetBundleData 
+public class BundleData 
 {
     //asset bundle's md5, used to hot update
     public string               md5 = "";

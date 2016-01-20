@@ -20,15 +20,6 @@
     
     {
         "md5" : "",        
-        "name" : "Lua/test.lua.txt",        
-        "dependAssets" : 
-        [
-            
-        ]
-    },    
-    
-    {
-        "md5" : "",        
         "name" : "Prefabs/guanyu.prefab",        
         "dependAssets" : 
         [
@@ -39,6 +30,15 @@
             "Spines/skeleton.json",            
             "Spines/skeleton_Atlas.asset",            
             "Spines/skeleton_SkeletonData.asset"
+        ]
+    },    
+    
+    {
+        "md5" : "",        
+        "name" : "Prefabs/GUI.prefab",        
+        "dependAssets" : 
+        [
+            
         ]
     },    
     

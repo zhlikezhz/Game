@@ -152,10 +152,10 @@ public class AssetBundleTools
 
     public static void WriteDependencies2Json(string path)
     {
-        List<AssetBundleData> datas = new List<AssetBundleData>();
+        List<BundleData> datas = new List<BundleData>();
         foreach (KeyValuePair<string, List<string>> kvp in dependencies)
         {
-            AssetBundleData data = new AssetBundleData();
+            BundleData data = new BundleData();
             string assetPath = AssetDatabase.GUIDToAssetPath(kvp.Key);
             data.name = assetPath.Replace("Assets/" + srcPath, "");
             data.dependAssets = FindDependencies(kvp.Key);
