@@ -235,11 +235,16 @@ public class BundleManager : MonoBehaviour
     {
         if (GameSetting.isEditorModel)
         {
+            string fullpath = string.Format("{0}/Build/{1}", Application.dataPath, path);
+            if(!File.Exists(fullpath))
+            {
+                Debug.LogError(string.Format("Resource not exist : {0}", path));
+            }
             return "Assets/Build/" + path;
         }
         else
         {
-            return Utils.LocalAssetBundlePath() + path + ".assetbundle";
+            return Utils.RealPath(path + ".assetbundle");
         }
     }
 
@@ -247,7 +252,7 @@ public class BundleManager : MonoBehaviour
     {
         if (!GameSetting.isEditorModel)
         {
-            StreamReader dependFile = File.OpenText(Utils.LocalAssetBundlePath() + "assetbundle.txt");
+            StreamReader dependFile = File.OpenText(Utils.RealPath("assetbundle.txt"));
             bundleData = LitJson.JsonMapper.ToObject<List<BundleData>>(dependFile.ReadToEnd());
             foreach (BundleData bundle in bundleData)
             {

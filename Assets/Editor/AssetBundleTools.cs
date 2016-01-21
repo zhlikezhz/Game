@@ -118,7 +118,7 @@ public class AssetBundleTools
             string assetExtension = Path.GetExtension(assetPath);
             string assetDirectory = Path.GetDirectoryName(assetPath);
             string bundlePath = assetDirectory.Replace("Assets/" + srcPath, "Assets/" + desPath);
-            CreateDirectories(bundlePath);
+            Utils.CreateDirectories(bundlePath);
             bundlePath = bundlePath + "/" + assetName + ".assetbundle";
             if (assetExtension == ".prefab") { BuildPipeline.PushAssetDependencies(); }
             Object obj = AssetDatabase.LoadMainAssetAtPath(assetPath);
@@ -164,6 +164,8 @@ public class AssetBundleTools
             BundleData data = new BundleData();
             string assetPath = AssetDatabase.GUIDToAssetPath(kvp.Key);
             data.name = assetPath.Replace("Assets/" + srcPath, "");
+            string fullpath = string.Format("{0}/{1}/{2}", Application.dataPath, srcPath, data.name);
+            data.md5 = Utils.md5file(fullpath);
             data.dependAssets = FindDependencies(kvp.Key);
             datas.Add(data);
         }
@@ -206,20 +208,6 @@ public class AssetBundleTools
         return dependList;
     }
 
-    public static void CreateDirectories(string path)
-    {
-        path = path.Replace("\\", "/");
-        string[] paths = path.Split(new char[] { '/' });
 
-        string subPath = "";
-        for (int i = 0; i < paths.Length; i++)
-        {
-            subPath = subPath + paths[i] + "/";
-            if (Directory.Exists(subPath) == false)
-            {
-                Directory.CreateDirectory(subPath);
-            }
-        }
-    }
 }
 

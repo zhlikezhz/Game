@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     LuaScriptMgr luaMgr;
     BundleManager bundleMgr;
+    DownloadManager downloadMgr;
     public static GameManager instance = null;
 
     public static GameManager Instance
@@ -29,6 +30,11 @@ public class GameManager : MonoBehaviour
         get { return bundleMgr; }
     }
 
+    public DownloadManager DownloadMgr
+    {
+        get { return downloadMgr; }
+    }
+
     public LuaScriptMgr LuaMgr
     {
         get { return luaMgr; }
@@ -36,10 +42,13 @@ public class GameManager : MonoBehaviour
 
     void Init()
     {
+        //初始化顺序不能变
+        downloadMgr = gameObject.AddComponent<DownloadManager>();
         bundleMgr = gameObject.AddComponent<BundleManager>();
         luaMgr = new LuaScriptMgr();
         LuaStatic.Load = Utils.LuaLoader;
 
+        downloadMgr.Init();
         bundleMgr.Init();
         Utils.DoFile("Init");
     }

@@ -57,7 +57,7 @@ public class Utils
             }
             else
             {
-                fullPath = string.Format("{0}{1}/{2}.lua.txt.assetbundle", StreamingAssetsPath(), path, filename);
+                fullPath = string.Format("{0}{1}/{2}.lua.txt.assetbundle", StreamingDataPath(), path, filename);
             }
             fullPath = fullPath.Replace('\\', '/');
 
@@ -72,7 +72,7 @@ public class Utils
         return str;
     }
 
-    public static string StreamingAssetsPath()
+    public static string StreamingDataPath()
     {
         if (Application.platform == RuntimePlatform.IPhonePlayer)
         {
@@ -88,21 +88,28 @@ public class Utils
         }
     }
 
-    public static string LocalAssetBundlePath()
+    public static string PresistentDataPath()
     {
-        if (Application.platform == RuntimePlatform.IPhonePlayer)
+        return Application.persistentDataPath + "/";
+    }
+
+    public static string HttpDataPath()
+    {
+        return "http://192.168.0.150/StreamingAssets/";
+    }
+
+    public static string RealPath(string path)
+    {
+        string realPath = PresistentDataPath() + path;
+        if(!File.Exists(realPath))
         {
-            return Application.dataPath + "/Raw/";
+            realPath = StreamingDataPath() + path;
+            if(!File.Exists(realPath))
+            {
+                Debug.LogError(string.Format("Resource not exist : {0}", path));
+            }
         }
-        else if (Application.platform == RuntimePlatform.Android)
-        {
-            return "jar:file://" + Application.dataPath + "!/assets/";
-        }
-        else
-        {
-            //return "file://" + Application.dataPath + "/StreamingAssets/";
-            return Application.dataPath + "/StreamingAssets/";
-        }
+        return realPath;
     }
 
     public static void CreateDirectories(string path)
@@ -126,7 +133,7 @@ public class Utils
         GameManager.Instance.LuaMgr.DoFile(filename);
     }
 
-    public static string MD5(string fileName)
+    public static string md5file(string fileName)
     {
         try
         {
