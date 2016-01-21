@@ -1,7 +1,7 @@
 [
     
     {
-        "md5" : "8bbb3d6c610efc15192f55ea73bd6419",        
+        "md5" : "c2676fb57445b01316443f0c6028ee6f",        
         "name" : "Lua/Init.lua.txt",        
         "dependAssets" : 
         [
@@ -10,26 +10,11 @@
     },    
     
     {
-        "md5" : "1594886053b33ff4d23adce8ff572ce3",        
+        "md5" : "948989c55c5548d44ebeef16ab65d3ac",        
         "name" : "Lua/Start.lua.txt",        
         "dependAssets" : 
         [
             
-        ]
-    },    
-    
-    {
-        "md5" : "8a8fa259c4655d1782aad938d95f834a",        
-        "name" : "Prefabs/guanyu.prefab",        
-        "dependAssets" : 
-        [
-            "Spines/skeleton.atlas.txt",            
-            "Spines/skeleton_Controller.controller",            
-            "Spines/skeleton.png",            
-            "Spines/skeleton_Material.mat",            
-            "Spines/skeleton.json",            
-            "Spines/skeleton_Atlas.asset",            
-            "Spines/skeleton_SkeletonData.asset"
         ]
     },    
     
@@ -51,6 +36,21 @@
             "Sprites/UI/Atlas/Atlas_MainCity.mat",            
             "Sprites/UI/Atlas/Atlas_MainCity.prefab",            
             "Lua/Panel/MainCityPanel.lua.txt"
+        ]
+    },    
+    
+    {
+        "md5" : "8a8fa259c4655d1782aad938d95f834a",        
+        "name" : "Prefabs/guanyu.prefab",        
+        "dependAssets" : 
+        [
+            "Spines/skeleton.atlas.txt",            
+            "Spines/skeleton_Controller.controller",            
+            "Spines/skeleton.png",            
+            "Spines/skeleton_Material.mat",            
+            "Spines/skeleton.json",            
+            "Spines/skeleton_Atlas.asset",            
+            "Spines/skeleton_SkeletonData.asset"
         ]
     },    
     
@@ -134,7 +134,7 @@
     },    
     
     {
-        "md5" : "5288db6fef50aabacf671d23d8173527",        
+        "md5" : "4729e3e10ef7a65d116055101d35dcdb",        
         "name" : "Lua/Panel/MainCityPanel.lua.txt",        
         "dependAssets" : 
         [
@@ -260,7 +260,7 @@
     },    
     
     {
-        "md5" : "6ba6a7dd9e0f1814f6be5e03811d1cc7",        
+        "md5" : "8c7b1c5f51c81d8f045ad025f3996ee7",        
         "name" : "Lua/uLua/Common/define.lua.txt",        
         "dependAssets" : 
         [
@@ -269,7 +269,7 @@
     },    
     
     {
-        "md5" : "edb350ac67280dc16155929fbf1516de",        
+        "md5" : "07ab5c49177561290427ba5184fde89a",        
         "name" : "Lua/uLua/Common/functions.lua.txt",        
         "dependAssets" : 
         [
@@ -278,7 +278,7 @@
     },    
     
     {
-        "md5" : "be8b440f623340c9a0ca9791799db91b",        
+        "md5" : "0dd398e8306466dbe7cfdad9b760adff",        
         "name" : "Lua/uLua/Common/protocal.lua.txt",        
         "dependAssets" : 
         [
@@ -296,7 +296,7 @@
     },    
     
     {
-        "md5" : "62a6e04a5983bb8c93d46327a572b089",        
+        "md5" : "12688d37ee122b3547339032169c35ae",        
         "name" : "Lua/uLua/Logic/LuaClass.lua.txt",        
         "dependAssets" : 
         [
@@ -325,15 +325,6 @@
     {
         "md5" : "a24b41eaed89be051caf8c2a9f3cb74b",        
         "name" : "Lua/uLua/System/Build.bat",        
-        "dependAssets" : 
-        [
-            
-        ]
-    },    
-    
-    {
-        "md5" : "c420d8d355ab0a1ea52de858d86e82cc",        
-        "name" : "Lua/uLua/System/class.lua.txt",        
         "dependAssets" : 
         [
             
@@ -449,26 +440,8 @@
     },    
     
     {
-        "md5" : "5a3784f230c0fab4430d0409b845213a",        
-        "name" : "Lua/uLua/System/readme.txt",        
-        "dependAssets" : 
-        [
-            
-        ]
-    },    
-    
-    {
         "md5" : "d9abc8882bea2ac15a5018893ec10a3a",        
         "name" : "Lua/uLua/System/Set.lua.txt",        
-        "dependAssets" : 
-        [
-            
-        ]
-    },    
-    
-    {
-        "md5" : "80d4fc57aaadd1494b0e23e3a93a12a1",        
-        "name" : "Lua/uLua/System/strict.lua.txt",        
         "dependAssets" : 
         [
             
@@ -539,8 +512,35 @@
     },    
     
     {
-        "md5" : "b4448e76e129aab631868551edbd6ad1",        
+        "md5" : "7cf597839eb937f7ec74165c77b42058",        
         "name" : "Lua/uLua/System/Wrap.lua.txt",        
+        "dependAssets" : 
+        [
+            
+        ]
+    },    
+    
+    {
+        "md5" : "c420d8d355ab0a1ea52de858d86e82cc",        
+        "name" : "Lua/uLua/System/class.lua.txt",        
+        "dependAssets" : 
+        [
+            
+        ]
+    },    
+    
+    {
+        "md5" : "5a3784f230c0fab4430d0409b845213a",        
+        "name" : "Lua/uLua/System/readme.txt",        
+        "dependAssets" : 
+        [
+            
+        ]
+    },    
+    
+    {
+        "md5" : "80d4fc57aaadd1494b0e23e3a93a12a1",        
+        "name" : "Lua/uLua/System/strict.lua.txt",        
         "dependAssets" : 
         [
             
@@ -629,6 +629,33 @@
     },    
     
     {
+        "md5" : "0ce99bc109879001fc1b39daf400f52d",        
+        "name" : "Lua/uLua/3rd/luabitop/Makefile",        
+        "dependAssets" : 
+        [
+            
+        ]
+    },    
+    
+    {
+        "md5" : "ed58c002a716b6da049f280925c52890",        
+        "name" : "Lua/uLua/3rd/luabitop/Makefile.mingw",        
+        "dependAssets" : 
+        [
+            
+        ]
+    },    
+    
+    {
+        "md5" : "58546e94cc441c9e77c2d59935ce5bed",        
+        "name" : "Lua/uLua/3rd/luabitop/README",        
+        "dependAssets" : 
+        [
+            
+        ]
+    },    
+    
+    {
         "md5" : "cae5fb7c7f7df13347498cb87777ac1a",        
         "name" : "Lua/uLua/3rd/luabitop/bitbench.lua.txt",        
         "dependAssets" : 
@@ -656,24 +683,6 @@
     },    
     
     {
-        "md5" : "0ce99bc109879001fc1b39daf400f52d",        
-        "name" : "Lua/uLua/3rd/luabitop/Makefile",        
-        "dependAssets" : 
-        [
-            
-        ]
-    },    
-    
-    {
-        "md5" : "ed58c002a716b6da049f280925c52890",        
-        "name" : "Lua/uLua/3rd/luabitop/Makefile.mingw",        
-        "dependAssets" : 
-        [
-            
-        ]
-    },    
-    
-    {
         "md5" : "8230b862acafd8b7a3e5bf0e78ca1f8b",        
         "name" : "Lua/uLua/3rd/luabitop/md5test.lua.txt",        
         "dependAssets" : 
@@ -683,7 +692,7 @@
     },    
     
     {
-        "md5" : "dd1a4adf13af476d0f0d468ecd1a1ac9",        
+        "md5" : "56b9025fbac37d682d2f8487f743ff8e",        
         "name" : "Lua/uLua/3rd/luabitop/msvcbuild.bat",        
         "dependAssets" : 
         [
@@ -703,15 +712,6 @@
     {
         "md5" : "2e88fbabf961aafd8e1e68935f70a093",        
         "name" : "Lua/uLua/3rd/luabitop/nsievebits.lua.txt",        
-        "dependAssets" : 
-        [
-            
-        ]
-    },    
-    
-    {
-        "md5" : "58546e94cc441c9e77c2d59935ce5bed",        
-        "name" : "Lua/uLua/3rd/luabitop/README",        
         "dependAssets" : 
         [
             
