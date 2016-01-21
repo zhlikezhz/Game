@@ -247,14 +247,14 @@ public class BundleManager : MonoBehaviour
     {
         if (!GameSetting.isEditorModel)
         {
-            string denpendencyFile = FullPath("assetbundle.txt");
-            TextAsset asset = AssetDatabase.LoadAssetAtPath("Assets/StreamingAssets/assetbundle.txt", typeof(TextAsset)) as TextAsset;
-            bundleData = LitJson.JsonMapper.ToObject<List<BundleData>>(asset.text);
-
+            StreamReader dependFile = File.OpenText(Utils.LocalAssetBundlePath() + "assetbundle.txt");
+            bundleData = LitJson.JsonMapper.ToObject<List<BundleData>>(dependFile.ReadToEnd());
             foreach (BundleData bundle in bundleData)
             {
                 bundleDependency.Add(bundle.name, bundle);
             }
+            dependFile.Close();
+            dependFile.Dispose();
         }
     }
 }
