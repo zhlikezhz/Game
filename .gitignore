@@ -7,3 +7,5 @@
 /Unity_2D_Framwork.sln
 /Unity_2D_Framwork.userprefs
 *.csproj
+/Package/
+*.DS_Store
