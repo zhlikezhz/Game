@@ -1,2 +1,9 @@
 /Library/
 /Temp/
+/UnityVS.Unity_2D_Framwork.CSharp.Editor.csproj
+/UnityVS.Unity_2D_Framwork.CSharp.csproj
+/UnityVS.Unity_2D_Framwork.sln
+/Unity_2D_Framwork-csharp.sln
+/Unity_2D_Framwork.sln
+/Unity_2D_Framwork.userprefs
+*.csproj
