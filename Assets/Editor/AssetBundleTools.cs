@@ -31,10 +31,16 @@ public class AssetBundleTools
         BuildReources(BuildTarget.Android, true);
     }
 
-    [MenuItem("AssetBundle/Build Windows Resource", false, 13)]
+    [MenuItem("AssetBundle/Build Windows Resource", false, 14)]
     public static void BuildWindowsResource()
     {
         BuildReources(BuildTarget.StandaloneWindows, true);
+    }
+
+    [MenuItem("AssetBundle/Build MAC Resource", false, 13)]
+    public static void BuildMACResource()
+    {
+        BuildReources(BuildTarget.StandaloneOSXUniversal, true);
     }
 
     public static void BuildReources(BuildTarget target, bool isWin)
