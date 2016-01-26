@@ -53,14 +53,15 @@ public static class LuaBinder
 			case "PlayModeWrap": PlayModeWrap.Register(L); break;
 			case "QualitySettingsWrap": QualitySettingsWrap.Register(L); break;
 			case "QueueModeWrap": QueueModeWrap.Register(L); break;
+			case "RendererWrap": RendererWrap.Register(L); break;
 			case "RenderSettingsWrap": RenderSettingsWrap.Register(L); break;
 			case "RenderTextureWrap": RenderTextureWrap.Register(L); break;
-			case "RendererWrap": RendererWrap.Register(L); break;
 			case "ScreenWrap": ScreenWrap.Register(L); break;
 			case "SkinnedMeshRendererWrap": SkinnedMeshRendererWrap.Register(L); break;
 			case "SleepTimeoutWrap": SleepTimeoutWrap.Register(L); break;
 			case "SpaceWrap": SpaceWrap.Register(L); break;
 			case "SphereColliderWrap": SphereColliderWrap.Register(L); break;
+			case "stringWrap": stringWrap.Register(L); break;
 			case "System_ObjectWrap": System_ObjectWrap.Register(L); break;
 			case "TestDelegateListenerWrap": TestDelegateListenerWrap.Register(L); break;
 			case "TestEventListenerWrap": TestEventListenerWrap.Register(L); break;
@@ -95,10 +96,9 @@ public static class LuaBinder
 			case "UITweenerWrap": UITweenerWrap.Register(L); break;
 			case "UIWidgetContainerWrap": UIWidgetContainerWrap.Register(L); break;
 			case "UIWidgetWrap": UIWidgetWrap.Register(L); break;
-			case "UtilWrap": UtilWrap.Register(L); break;
 			case "UtilsWrap": UtilsWrap.Register(L); break;
+			case "UtilWrap": UtilWrap.Register(L); break;
 			case "WWWWrap": WWWWrap.Register(L); break;
-			case "stringWrap": stringWrap.Register(L); break;
 		}
 	}
 }

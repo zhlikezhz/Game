@@ -7,13 +7,10 @@ public class DownloadManager : MonoBehaviour
 {
     public void Init()
     {
-        if (GameSetting.isEditorModel == false)
+        if (GameSetting.isHotUpdate == true)
         {
-            if(GameSetting.isHotUpdate == true)
-            {
-                Debug.Log(Utils.PresistentDataPath());
-                StartCoroutine(HotUpdate());
-            }
+            Debug.Log(Utils.PresistentDataPath());
+            StartCoroutine(HotUpdate());
         }
     }
 
@@ -66,23 +63,12 @@ public class DownloadManager : MonoBehaviour
             string serverBundlePath = Utils.HttpDataPath() + bundle.name + ".assetbundle";
             WWW serverBundleFile = new WWW(serverBundlePath);
             yield return serverBundleFile;
-            SaveFile(serverBundleFile.bytes, Utils.PresistentDataPath() + bundle.name + ".assetbundle");
+            Utils.SaveFile(serverBundleFile.bytes, Utils.PresistentDataPath() + bundle.name + ".assetbundle");
             serverBundleFile.Dispose();
         }
 
-        SaveFile(serverVersionFile.bytes, Utils.PresistentDataPath() + "assetbundle.txt");
+        Utils.SaveFile(serverVersionFile.bytes, Utils.PresistentDataPath() + "assetbundle.txt");
         serverVersionFile.Dispose();
-    }
-
-    private void SaveFile(byte[] data, string path)
-    {
-        string directory = System.IO.Path.GetDirectoryName(path);
-        Utils.CreateDirectories(directory);
-
-        FileStream stream = new FileStream(path, FileMode.OpenOrCreate);
-        stream.Write(data, 0, data.Length);
-        stream.Flush();
-        stream.Close();  
     }
 
 

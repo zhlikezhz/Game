@@ -128,9 +128,25 @@ public class Utils
         }
     }
 
-    public static void DoFile(string filename)
+    public static void SaveFile(byte[] data, string path)
     {
-        GameManager.Instance.LuaMgr.DoFile(filename);
+        string directory = System.IO.Path.GetDirectoryName(path);
+        Utils.CreateDirectories(directory);
+
+        FileStream stream = new FileStream(path, FileMode.OpenOrCreate);
+        stream.Write(data, 0, data.Length);
+        stream.Flush();
+        stream.Close();
+    }
+
+    public static object[] DoFile(string filename)
+    {
+        return GameManager.Instance.LuaMgr.DoFile(filename);
+    }
+    
+    public static object[] DoString(string filename)
+    {
+        return GameManager.Instance.LuaMgr.DoString(filename);
     }
 
     public static string md5file(string fileName)

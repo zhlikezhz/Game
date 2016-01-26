@@ -13,7 +13,12 @@ function RegisterEvent()
 	local warlordsBtn = gameObject.Find("MainCity/ForegroundLayer/LeftBottom/Grid/Warlords")
 
 	UIEventListener.Get(shopBtn).onClick = function(obj)
-		print(obj.name)
+		local view = Utils.BundleMgr():LoadAsset("Prefabs/WaitingView.prefab")
+		local wait = GameObject.Instantiate(view)
+		local gui = GameObject.Find("GUI")
+		wait.transform:SetParent(gui.transform)
+		wait.transform.localScale = Vector3.New(1, 1, 1)
+		wait.name = "waiting"
 	end
 
 	UIEventListener.Get(recruitBtn).onClick = function(obj)
